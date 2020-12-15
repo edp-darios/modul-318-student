@@ -42,12 +42,19 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.lblTime = new System.Windows.Forms.Label();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.grpTime = new System.Windows.Forms.GroupBox();
             this.rdbArrival = new System.Windows.Forms.RadioButton();
             this.rdbDepature = new System.Windows.Forms.RadioButton();
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.btnEmail = new System.Windows.Forms.Button();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.Depature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.From = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Plattform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.grpTime.SuspendLayout();
@@ -74,7 +81,7 @@
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(299, 56);
+            this.lblTo.Location = new System.Drawing.Point(453, 55);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(29, 17);
             this.lblTo.TabIndex = 2;
@@ -86,7 +93,7 @@
             this.grpShow.Controls.Add(this.rdbConnections);
             this.grpShow.Location = new System.Drawing.Point(61, 2);
             this.grpShow.Name = "grpShow";
-            this.grpShow.Size = new System.Drawing.Size(505, 39);
+            this.grpShow.Size = new System.Drawing.Size(810, 39);
             this.grpShow.TabIndex = 3;
             this.grpShow.TabStop = false;
             // 
@@ -117,15 +124,15 @@
             this.cboFromLocation.FormattingEnabled = true;
             this.cboFromLocation.Location = new System.Drawing.Point(61, 52);
             this.cboFromLocation.Name = "cboFromLocation";
-            this.cboFromLocation.Size = new System.Drawing.Size(204, 24);
+            this.cboFromLocation.Size = new System.Drawing.Size(353, 24);
             this.cboFromLocation.TabIndex = 4;
             // 
             // cboToLocation
             // 
             this.cboToLocation.FormattingEnabled = true;
-            this.cboToLocation.Location = new System.Drawing.Point(334, 52);
+            this.cboToLocation.Location = new System.Drawing.Point(485, 52);
             this.cboToLocation.Name = "cboToLocation";
-            this.cboToLocation.Size = new System.Drawing.Size(204, 24);
+            this.cboToLocation.Size = new System.Drawing.Size(353, 24);
             this.cboToLocation.TabIndex = 5;
             // 
             // btnMapFrom
@@ -135,7 +142,7 @@
             this.btnMapFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMapFrom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMapFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapFrom.Location = new System.Drawing.Point(266, 52);
+            this.btnMapFrom.Location = new System.Drawing.Point(420, 52);
             this.btnMapFrom.Name = "btnMapFrom";
             this.btnMapFrom.Size = new System.Drawing.Size(27, 24);
             this.btnMapFrom.TabIndex = 6;
@@ -148,7 +155,7 @@
             this.btnMapTo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMapTo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMapTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapTo.Location = new System.Drawing.Point(539, 52);
+            this.btnMapTo.Location = new System.Drawing.Point(844, 52);
             this.btnMapTo.Name = "btnMapTo";
             this.btnMapTo.Size = new System.Drawing.Size(27, 24);
             this.btnMapTo.TabIndex = 8;
@@ -158,7 +165,7 @@
             // 
             this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchButton.Location = new System.Drawing.Point(491, 137);
+            this.SearchButton.Location = new System.Drawing.Point(796, 137);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 31);
             this.SearchButton.TabIndex = 9;
@@ -169,39 +176,46 @@
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(16, 186);
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Depature,
+            this.From,
+            this.To,
+            this.Plattform,
+            this.Duration,
+            this.Arrival});
+            this.dataGridView.Location = new System.Drawing.Point(16, 174);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(550, 304);
+            this.dataGridView.Size = new System.Drawing.Size(855, 304);
             this.dataGridView.TabIndex = 11;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(12, 99);
+            this.lblTime.Location = new System.Drawing.Point(13, 98);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(43, 17);
             this.lblTime.TabIndex = 12;
             this.lblTime.Text = "Time:";
             // 
-            // dateTimePicker
+            // dtpDate
             // 
-            this.dateTimePicker.CustomFormat = "HH:mm | dd.MM.yyyy ";
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(61, 94);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(232, 22);
-            this.dateTimePicker.TabIndex = 13;
-            this.dateTimePicker.Value = new System.DateTime(2020, 12, 15, 11, 44, 19, 0);
+            this.dtpDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(238, 96);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(209, 22);
+            this.dtpDate.TabIndex = 13;
+            this.dtpDate.Value = new System.DateTime(2020, 12, 15, 11, 44, 19, 0);
             // 
             // grpTime
             // 
             this.grpTime.Controls.Add(this.rdbArrival);
             this.grpTime.Controls.Add(this.rdbDepature);
-            this.grpTime.Location = new System.Drawing.Point(334, 82);
+            this.grpTime.Location = new System.Drawing.Point(485, 82);
             this.grpTime.Name = "grpTime";
-            this.grpTime.Size = new System.Drawing.Size(232, 39);
+            this.grpTime.Size = new System.Drawing.Size(386, 39);
             this.grpTime.TabIndex = 4;
             this.grpTime.TabStop = false;
             // 
@@ -232,30 +246,84 @@
             this.tbxEmail.AccessibleDescription = "email";
             this.tbxEmail.Location = new System.Drawing.Point(16, 509);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(436, 22);
+            this.tbxEmail.Size = new System.Drawing.Size(741, 22);
             this.tbxEmail.TabIndex = 14;
             // 
             // btnEmail
             // 
             this.btnEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmail.Location = new System.Drawing.Point(458, 503);
+            this.btnEmail.Location = new System.Drawing.Point(763, 496);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(108, 35);
             this.btnEmail.TabIndex = 15;
             this.btnEmail.Text = "send Email";
             this.btnEmail.UseVisualStyleBackColor = true;
             // 
+            // dtpTime
+            // 
+            this.dtpTime.Checked = false;
+            this.dtpTime.CustomFormat = "HH:mm";
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTime.Location = new System.Drawing.Point(61, 96);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.ShowUpDown = true;
+            this.dtpTime.Size = new System.Drawing.Size(171, 22);
+            this.dtpTime.TabIndex = 16;
+            // 
+            // Depature
+            // 
+            this.Depature.HeaderText = "Depature";
+            this.Depature.MinimumWidth = 6;
+            this.Depature.Name = "Depature";
+            this.Depature.Width = 125;
+            // 
+            // From
+            // 
+            this.From.HeaderText = "From";
+            this.From.MinimumWidth = 6;
+            this.From.Name = "From";
+            this.From.Width = 125;
+            // 
+            // To
+            // 
+            this.To.HeaderText = "To";
+            this.To.MinimumWidth = 6;
+            this.To.Name = "To";
+            this.To.Width = 125;
+            // 
+            // Plattform
+            // 
+            this.Plattform.HeaderText = "Plattform";
+            this.Plattform.MinimumWidth = 6;
+            this.Plattform.Name = "Plattform";
+            this.Plattform.Width = 125;
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.MinimumWidth = 6;
+            this.Duration.Name = "Duration";
+            this.Duration.Width = 125;
+            // 
+            // Arrival
+            // 
+            this.Arrival.HeaderText = "Arrival";
+            this.Arrival.MinimumWidth = 6;
+            this.Arrival.Name = "Arrival";
+            this.Arrival.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(627, 766);
+            this.ClientSize = new System.Drawing.Size(883, 766);
+            this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.grpTime);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.SearchButton);
@@ -294,12 +362,19 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.GroupBox grpTime;
         private System.Windows.Forms.RadioButton rdbArrival;
         private System.Windows.Forms.RadioButton rdbDepature;
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Depature;
+        private System.Windows.Forms.DataGridViewTextBoxColumn From;
+        private System.Windows.Forms.DataGridViewTextBoxColumn To;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Plattform;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arrival;
     }
 }
 
