@@ -27,22 +27,23 @@ namespace TransportApp
             {
              dataGridView.Rows.Clear();
           
-                var connections = transport.GetConnections(cboFromLocation.Text, cboToLocation.Text, dtpTime.Value, dtpDate.Value, 16);
+                var connections = transport.GetConnections(cboFromLocation.Text, cboToLocation.Text, dtpTime.Value, dtpDate.Value, 4);
 
                 foreach (Connection connection in connections.ConnectionList)
                 {
-                    dataGridView.Rows.Add(new[] { connection.From.Departure.Value.ToString(), connection.From.Station.Name, connection.To.Station.Name, connection.From.Platform, connection.Duration.ToString(), connection.To.Arrival.Value.ToString() });
+                    dataGridView.Rows.Add(new[] { connection.From.Departure.Value.ToString(), connection.From.Station.Name, connection.To.Station.Name, connection.From.Platform, connection.To.Arrival.Value.ToString(), connection.Duration.ToString() });
                 }
             }
+
             else
             {
                 dataGridView.Rows.Clear();
 
-                var StationBoards = transport.GetStationBoard(cboFromLocation.Text,"0");
+                var StationBoards = transport.GetStationBoard(cboFromLocation.Text,"0",dtpDate.Value,16);
 
                 foreach (StationBoard stationBoard in StationBoards.Entries)
                 {
-                    dataGridView.Rows.Add(new[] { stationBoard.Name.ToString() });
+                    dataGridView.Rows.Add(new[] { stationBoard.Stop.Departure.ToString(), StationBoards.Station.Name.ToString(), stationBoard.To });
                 }
             }
 

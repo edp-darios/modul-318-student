@@ -41,6 +41,12 @@
             this.btnMapTo = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Depature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.From = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Plattform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTime = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.grpTime = new System.Windows.Forms.GroupBox();
@@ -49,12 +55,6 @@
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.btnEmail = new System.Windows.Forms.Button();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.Depature = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.From = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Plattform = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.grpTime.SuspendLayout();
@@ -190,6 +190,48 @@
             this.dataGridView.Size = new System.Drawing.Size(855, 304);
             this.dataGridView.TabIndex = 11;
             // 
+            // Depature
+            // 
+            this.Depature.HeaderText = "Depature";
+            this.Depature.MinimumWidth = 6;
+            this.Depature.Name = "Depature";
+            this.Depature.Width = 125;
+            // 
+            // From
+            // 
+            this.From.HeaderText = "From";
+            this.From.MinimumWidth = 6;
+            this.From.Name = "From";
+            this.From.Width = 125;
+            // 
+            // To
+            // 
+            this.To.HeaderText = "To";
+            this.To.MinimumWidth = 6;
+            this.To.Name = "To";
+            this.To.Width = 125;
+            // 
+            // Plattform
+            // 
+            this.Plattform.HeaderText = "Plattform";
+            this.Plattform.MinimumWidth = 6;
+            this.Plattform.Name = "Plattform";
+            this.Plattform.Width = 125;
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.MinimumWidth = 6;
+            this.Duration.Name = "Duration";
+            this.Duration.Width = 125;
+            // 
+            // Arrival
+            // 
+            this.Arrival.HeaderText = "Arrival";
+            this.Arrival.MinimumWidth = 6;
+            this.Arrival.Name = "Arrival";
+            this.Arrival.Width = 125;
+            // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
@@ -201,13 +243,13 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.CustomFormat = "MM/dd/yyyy";
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.CustomFormat = "";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(238, 96);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(209, 22);
             this.dtpDate.TabIndex = 13;
-            this.dtpDate.Value = new System.DateTime(2020, 12, 15, 11, 44, 19, 0);
+            this.dtpDate.Value = new System.DateTime(2020, 12, 15, 15, 42, 59, 0);
             // 
             // grpTime
             // 
@@ -265,53 +307,12 @@
             this.dtpTime.Checked = false;
             this.dtpTime.CustomFormat = "HH:mm";
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtpTime.Location = new System.Drawing.Point(61, 96);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(171, 22);
-            this.dtpTime.TabIndex = 16;
-            // 
-            // Depature
-            // 
-            this.Depature.HeaderText = "Depature";
-            this.Depature.MinimumWidth = 6;
-            this.Depature.Name = "Depature";
-            this.Depature.Width = 125;
-            // 
-            // From
-            // 
-            this.From.HeaderText = "From";
-            this.From.MinimumWidth = 6;
-            this.From.Name = "From";
-            this.From.Width = 125;
-            // 
-            // To
-            // 
-            this.To.HeaderText = "To";
-            this.To.MinimumWidth = 6;
-            this.To.Name = "To";
-            this.To.Width = 125;
-            // 
-            // Plattform
-            // 
-            this.Plattform.HeaderText = "Plattform";
-            this.Plattform.MinimumWidth = 6;
-            this.Plattform.Name = "Plattform";
-            this.Plattform.Width = 125;
-            // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.MinimumWidth = 6;
-            this.Duration.Name = "Duration";
-            this.Duration.Width = 125;
-            // 
-            // Arrival
-            // 
-            this.Arrival.HeaderText = "Arrival";
-            this.Arrival.MinimumWidth = 6;
-            this.Arrival.Name = "Arrival";
-            this.Arrival.Width = 125;
+            this.dtpTime.TabIndex = 2;
             // 
             // Form1
             // 
