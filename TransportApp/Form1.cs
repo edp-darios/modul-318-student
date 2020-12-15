@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwissTransport.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,17 @@ namespace TransportApp
 {
     public partial class Form1 : Form
     {
+        ITransport transport = new Transport();
+
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+           
+          
+        }
     }
 }
