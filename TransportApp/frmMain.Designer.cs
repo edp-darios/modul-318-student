@@ -1,6 +1,6 @@
 ﻿namespace TransportApp
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lblShow = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
@@ -55,15 +55,22 @@
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.btnEmail = new System.Windows.Forms.Button();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.grpHeader = new System.Windows.Forms.GroupBox();
+            this.picHeader = new System.Windows.Forms.PictureBox();
+            this.lblHeaderText = new System.Windows.Forms.Label();
+            this.lblHeaderTitel = new System.Windows.Forms.Label();
             this.grpShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.grpTime.SuspendLayout();
+            this.grpHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.SuspendLayout();
             // 
             // lblShow
             // 
             this.lblShow.AutoSize = true;
-            this.lblShow.Location = new System.Drawing.Point(12, 18);
+            this.lblShow.Location = new System.Drawing.Point(12, 125);
             this.lblShow.Name = "lblShow";
             this.lblShow.Size = new System.Drawing.Size(46, 17);
             this.lblShow.TabIndex = 0;
@@ -72,26 +79,26 @@
             // lblFrom
             // 
             this.lblFrom.AutoSize = true;
-            this.lblFrom.Location = new System.Drawing.Point(13, 55);
+            this.lblFrom.Location = new System.Drawing.Point(13, 162);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(44, 17);
-            this.lblFrom.TabIndex = 1;
+            this.lblFrom.TabIndex = 11;
             this.lblFrom.Text = "From:";
             // 
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(453, 55);
+            this.lblTo.Location = new System.Drawing.Point(453, 162);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(29, 17);
-            this.lblTo.TabIndex = 2;
+            this.lblTo.TabIndex = 11;
             this.lblTo.Text = "To:";
             // 
             // grpShow
             // 
             this.grpShow.Controls.Add(this.rdbDepatureBoard);
             this.grpShow.Controls.Add(this.rdbConnections);
-            this.grpShow.Location = new System.Drawing.Point(61, 2);
+            this.grpShow.Location = new System.Drawing.Point(61, 109);
             this.grpShow.Name = "grpShow";
             this.grpShow.Size = new System.Drawing.Size(810, 39);
             this.grpShow.TabIndex = 3;
@@ -104,13 +111,14 @@
             this.rdbDepatureBoard.Name = "rdbDepatureBoard";
             this.rdbDepatureBoard.Size = new System.Drawing.Size(127, 21);
             this.rdbDepatureBoard.TabIndex = 1;
-            this.rdbDepatureBoard.TabStop = true;
             this.rdbDepatureBoard.Text = "depature board";
             this.rdbDepatureBoard.UseVisualStyleBackColor = true;
+            this.rdbDepatureBoard.Click += new System.EventHandler(this.RadioButtonsShow);
             // 
             // rdbConnections
             // 
             this.rdbConnections.AutoSize = true;
+            this.rdbConnections.Checked = true;
             this.rdbConnections.Location = new System.Drawing.Point(6, 12);
             this.rdbConnections.Name = "rdbConnections";
             this.rdbConnections.Size = new System.Drawing.Size(105, 21);
@@ -118,22 +126,23 @@
             this.rdbConnections.TabStop = true;
             this.rdbConnections.Text = "connections";
             this.rdbConnections.UseVisualStyleBackColor = true;
+            this.rdbConnections.Click += new System.EventHandler(this.RadioButtonsShow);
             // 
             // cboFromLocation
             // 
             this.cboFromLocation.FormattingEnabled = true;
-            this.cboFromLocation.Location = new System.Drawing.Point(61, 52);
+            this.cboFromLocation.Location = new System.Drawing.Point(61, 159);
             this.cboFromLocation.Name = "cboFromLocation";
             this.cboFromLocation.Size = new System.Drawing.Size(353, 24);
-            this.cboFromLocation.TabIndex = 4;
+            this.cboFromLocation.TabIndex = 2;
             // 
             // cboToLocation
             // 
             this.cboToLocation.FormattingEnabled = true;
-            this.cboToLocation.Location = new System.Drawing.Point(485, 52);
+            this.cboToLocation.Location = new System.Drawing.Point(485, 159);
             this.cboToLocation.Name = "cboToLocation";
             this.cboToLocation.Size = new System.Drawing.Size(353, 24);
-            this.cboToLocation.TabIndex = 5;
+            this.cboToLocation.TabIndex = 3;
             // 
             // btnMapFrom
             // 
@@ -142,11 +151,13 @@
             this.btnMapFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMapFrom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMapFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapFrom.Location = new System.Drawing.Point(420, 52);
+            this.btnMapFrom.Location = new System.Drawing.Point(420, 159);
             this.btnMapFrom.Name = "btnMapFrom";
             this.btnMapFrom.Size = new System.Drawing.Size(27, 24);
-            this.btnMapFrom.TabIndex = 6;
+            this.btnMapFrom.TabIndex = 11;
+            this.btnMapFrom.TabStop = false;
             this.btnMapFrom.UseVisualStyleBackColor = false;
+            this.btnMapFrom.Click += new System.EventHandler(this.notInplemented);
             // 
             // btnMapTo
             // 
@@ -155,20 +166,22 @@
             this.btnMapTo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMapTo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMapTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapTo.Location = new System.Drawing.Point(844, 52);
+            this.btnMapTo.Location = new System.Drawing.Point(844, 159);
             this.btnMapTo.Name = "btnMapTo";
             this.btnMapTo.Size = new System.Drawing.Size(27, 24);
-            this.btnMapTo.TabIndex = 8;
+            this.btnMapTo.TabIndex = 11;
+            this.btnMapTo.TabStop = false;
             this.btnMapTo.UseVisualStyleBackColor = false;
+            this.btnMapTo.Click += new System.EventHandler(this.notInplemented);
             // 
             // SearchButton
             // 
             this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchButton.Location = new System.Drawing.Point(796, 137);
+            this.SearchButton.Location = new System.Drawing.Point(796, 244);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 31);
-            this.SearchButton.TabIndex = 9;
+            this.SearchButton.TabIndex = 8;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
@@ -183,12 +196,13 @@
             this.Plattform,
             this.Duration,
             this.Arrival});
-            this.dataGridView.Location = new System.Drawing.Point(16, 174);
+            this.dataGridView.Location = new System.Drawing.Point(16, 281);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(855, 304);
             this.dataGridView.TabIndex = 11;
+            this.dataGridView.TabStop = false;
             // 
             // Depature
             // 
@@ -235,7 +249,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(13, 98);
+            this.lblTime.Location = new System.Drawing.Point(13, 205);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(43, 17);
             this.lblTime.TabIndex = 12;
@@ -245,17 +259,17 @@
             // 
             this.dtpDate.CustomFormat = "";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(238, 96);
+            this.dtpDate.Location = new System.Drawing.Point(238, 203);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(209, 22);
-            this.dtpDate.TabIndex = 13;
+            this.dtpDate.TabIndex = 5;
             this.dtpDate.Value = new System.DateTime(2020, 12, 15, 15, 42, 59, 0);
             // 
             // grpTime
             // 
             this.grpTime.Controls.Add(this.rdbArrival);
             this.grpTime.Controls.Add(this.rdbDepature);
-            this.grpTime.Location = new System.Drawing.Point(485, 82);
+            this.grpTime.Location = new System.Drawing.Point(485, 189);
             this.grpTime.Name = "grpTime";
             this.grpTime.Size = new System.Drawing.Size(386, 39);
             this.grpTime.TabIndex = 4;
@@ -267,7 +281,7 @@
             this.rdbArrival.Location = new System.Drawing.Point(136, 12);
             this.rdbArrival.Name = "rdbArrival";
             this.rdbArrival.Size = new System.Drawing.Size(68, 21);
-            this.rdbArrival.TabIndex = 1;
+            this.rdbArrival.TabIndex = 7;
             this.rdbArrival.TabStop = true;
             this.rdbArrival.Text = "arrival";
             this.rdbArrival.UseVisualStyleBackColor = true;
@@ -278,7 +292,7 @@
             this.rdbDepature.Location = new System.Drawing.Point(24, 12);
             this.rdbDepature.Name = "rdbDepature";
             this.rdbDepature.Size = new System.Drawing.Size(86, 21);
-            this.rdbDepature.TabIndex = 0;
+            this.rdbDepature.TabIndex = 6;
             this.rdbDepature.TabStop = true;
             this.rdbDepature.Text = "depature";
             this.rdbDepature.UseVisualStyleBackColor = true;
@@ -286,21 +300,23 @@
             // tbxEmail
             // 
             this.tbxEmail.AccessibleDescription = "email";
-            this.tbxEmail.Location = new System.Drawing.Point(16, 509);
+            this.tbxEmail.Location = new System.Drawing.Point(16, 616);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(741, 22);
-            this.tbxEmail.TabIndex = 14;
+            this.tbxEmail.TabIndex = 9;
+            this.tbxEmail.Text = "example@email.com";
             // 
             // btnEmail
             // 
             this.btnEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmail.Location = new System.Drawing.Point(763, 496);
+            this.btnEmail.Location = new System.Drawing.Point(763, 610);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(108, 35);
-            this.btnEmail.TabIndex = 15;
+            this.btnEmail.TabIndex = 11;
             this.btnEmail.Text = "send Email";
             this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.notInplemented);
             // 
             // dtpTime
             // 
@@ -308,18 +324,66 @@
             this.dtpTime.CustomFormat = "HH:mm";
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpTime.Location = new System.Drawing.Point(61, 96);
+            this.dtpTime.Location = new System.Drawing.Point(61, 203);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(171, 22);
-            this.dtpTime.TabIndex = 2;
+            this.dtpTime.TabIndex = 4;
             // 
-            // Form1
+            // grpHeader
+            // 
+            this.grpHeader.BackColor = System.Drawing.SystemColors.Desktop;
+            this.grpHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpHeader.Controls.Add(this.picHeader);
+            this.grpHeader.Controls.Add(this.lblHeaderText);
+            this.grpHeader.Controls.Add(this.lblHeaderTitel);
+            this.grpHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grpHeader.Location = new System.Drawing.Point(0, 0);
+            this.grpHeader.Name = "grpHeader";
+            this.grpHeader.Size = new System.Drawing.Size(886, 103);
+            this.grpHeader.TabIndex = 13;
+            this.grpHeader.TabStop = false;
+            // 
+            // picHeader
+            // 
+            this.picHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picHeader.BackgroundImage")));
+            this.picHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picHeader.Location = new System.Drawing.Point(16, 21);
+            this.picHeader.Name = "picHeader";
+            this.picHeader.Size = new System.Drawing.Size(81, 69);
+            this.picHeader.TabIndex = 16;
+            this.picHeader.TabStop = false;
+            // 
+            // lblHeaderText
+            // 
+            this.lblHeaderText.AutoSize = true;
+            this.lblHeaderText.Font = new System.Drawing.Font("Arial", 8.2F);
+            this.lblHeaderText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblHeaderText.Location = new System.Drawing.Point(656, 84);
+            this.lblHeaderText.Name = "lblHeaderText";
+            this.lblHeaderText.Size = new System.Drawing.Size(197, 16);
+            this.lblHeaderText.TabIndex = 15;
+            this.lblHeaderText.Text = "powerd by SwissTransport API";
+            // 
+            // lblHeaderTitel
+            // 
+            this.lblHeaderTitel.AutoSize = true;
+            this.lblHeaderTitel.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderTitel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblHeaderTitel.Location = new System.Drawing.Point(101, 40);
+            this.lblHeaderTitel.Name = "lblHeaderTitel";
+            this.lblHeaderTitel.Size = new System.Drawing.Size(195, 33);
+            this.lblHeaderTitel.TabIndex = 14;
+            this.lblHeaderTitel.Text = "TransportApp";
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(883, 766);
+            this.ClientSize = new System.Drawing.Size(886, 766);
+            this.Controls.Add(this.grpHeader);
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.tbxEmail);
@@ -336,13 +400,18 @@
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.lblShow);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.MaximumSize = new System.Drawing.Size(904, 813);
+            this.MinimumSize = new System.Drawing.Size(904, 813);
+            this.Name = "frmMain";
+            this.Text = "TransportApp";
             this.grpShow.ResumeLayout(false);
             this.grpShow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.grpTime.ResumeLayout(false);
             this.grpTime.PerformLayout();
+            this.grpHeader.ResumeLayout(false);
+            this.grpHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,6 +445,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Plattform;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn Arrival;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.GroupBox grpHeader;
+        private System.Windows.Forms.PictureBox picHeader;
+        private System.Windows.Forms.Label lblHeaderText;
+        private System.Windows.Forms.Label lblHeaderTitel;
     }
 }
 
