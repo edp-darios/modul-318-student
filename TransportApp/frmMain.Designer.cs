@@ -135,6 +135,7 @@
             this.cboFromLocation.Name = "cboFromLocation";
             this.cboFromLocation.Size = new System.Drawing.Size(353, 24);
             this.cboFromLocation.TabIndex = 2;
+            this.cboFromLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboFromLocation_KeyUp);
             // 
             // cboToLocation
             // 
@@ -274,6 +275,7 @@
             this.grpTime.Size = new System.Drawing.Size(386, 39);
             this.grpTime.TabIndex = 4;
             this.grpTime.TabStop = false;
+            this.grpTime.Visible = false;
             // 
             // rdbArrival
             // 
