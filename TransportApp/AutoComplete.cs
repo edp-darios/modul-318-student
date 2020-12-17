@@ -8,7 +8,6 @@ namespace TransportApp
 {
     class AutoComplete
     {
-
         ITransport transport = new Transport();
 
         public void Station(ComboBox combobox)
@@ -29,11 +28,9 @@ namespace TransportApp
                             combobox.Items.Add(station);
                         }
                     }
-
                     combobox.DroppedDown = true;
                     combobox.Text = eingabe;
                     combobox.SelectionStart = combobox.Text.Length + 1;
-
                 }
                 catch
                 {
@@ -43,7 +40,6 @@ namespace TransportApp
                 }
             } 
         }
-        
         public List<string> StationSuggestion(string query)
         {
             List<string> stationList = new List<string>();
@@ -61,7 +57,5 @@ namespace TransportApp
             }
             return stationList;
         }
-
-
     }
 }

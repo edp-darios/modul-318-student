@@ -14,7 +14,6 @@ namespace TransportApp
 {
     public partial class frmMain : Form
     {
-
         ITransport transport = new Transport();
         AutoComplete autoComplete = new AutoComplete();
 
@@ -26,7 +25,7 @@ namespace TransportApp
         private void SearchButton_Click(object sender, EventArgs e)
         {
             try { 
-                if (rdbConnections.Checked) 
+                if (rdbConnections.Checked && (cboFromLocation.Text != "" && cboToLocation.Text != "")) 
                 {
                     dataGridView.Rows.Clear();
                     var connections = transport.GetConnections(cboFromLocation.Text, cboToLocation.Text, dtpTime.Value, dtpDate.Value, 16);
@@ -44,7 +43,7 @@ namespace TransportApp
                     }
                 }
 
-                else 
+                else if (rdbDepatureBoard.Checked && cboFromLocation.Text != "")
                 {
                     dataGridView.Rows.Clear();
                     var StationBoards = transport.GetStationBoard(cboFromLocation.Text,"0",dtpDate.Value,16);
@@ -54,9 +53,13 @@ namespace TransportApp
                         dataGridView.Rows.Add(new[] { 
                         stationBoard.Stop.Departure.ToString(), 
                         StationBoards.Station.Name.ToString(), 
-                        stationBoard.To 
+                        stationBoard.To,
+                        stationBoard.Name.ToString()
                         });
                     }
+                } else
+                {
+                    MessageBox.Show("Bitte fülle das/die Felder aus!");
                 }
             }
             catch
@@ -87,9 +90,15 @@ namespace TransportApp
             dtpDate.Enabled = setEnable;
             dtpTime.Enabled = setEnable;
             lblTime.Enabled = setEnable;
-            dataGridView.Columns[3].Visible = setEnable;
             dataGridView.Columns[4].Visible = setEnable;
             dataGridView.Columns[5].Visible = setEnable;
+            if (!setEnable)
+            {
+                dataGridView.Columns[3].HeaderText = "Train";
+            } else
+            {
+                dataGridView.Columns[3].HeaderText = "Plattform";
+            }
         }
 
         private void cboKeyUp(object sender, KeyEventArgs e)
@@ -103,6 +112,11 @@ namespace TransportApp
         private void notInplemented(object sender, EventArgs e)
         {
             MessageBox.Show("Work in progress");
+        }
+
+        private void grpHeader_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
