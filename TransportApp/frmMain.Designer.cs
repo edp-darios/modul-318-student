@@ -49,9 +49,6 @@
             this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTime = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.grpTime = new System.Windows.Forms.GroupBox();
-            this.rdbArrival = new System.Windows.Forms.RadioButton();
-            this.rdbDepature = new System.Windows.Forms.RadioButton();
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.btnEmail = new System.Windows.Forms.Button();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
@@ -62,7 +59,6 @@
             this.lblHeaderTitel = new System.Windows.Forms.Label();
             this.grpShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.grpTime.SuspendLayout();
             this.grpHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.SuspendLayout();
@@ -149,7 +145,7 @@
             // 
             // btnMapFrom
             // 
-            this.btnMapFrom.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnMapFrom.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnMapFrom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMapFrom.BackgroundImage")));
             this.btnMapFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMapFrom.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -164,7 +160,7 @@
             // 
             // btnMapTo
             // 
-            this.btnMapTo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnMapTo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnMapTo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMapTo.BackgroundImage")));
             this.btnMapTo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMapTo.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -179,6 +175,7 @@
             // 
             // SearchButton
             // 
+            this.SearchButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Location = new System.Drawing.Point(796, 244);
@@ -186,7 +183,7 @@
             this.SearchButton.Size = new System.Drawing.Size(75, 31);
             this.SearchButton.TabIndex = 8;
             this.SearchButton.Text = "Search";
-            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // dataGridView
@@ -267,38 +264,6 @@
             this.dtpDate.TabIndex = 5;
             this.dtpDate.Value = new System.DateTime(2020, 12, 15, 15, 42, 59, 0);
             // 
-            // grpTime
-            // 
-            this.grpTime.Controls.Add(this.rdbArrival);
-            this.grpTime.Controls.Add(this.rdbDepature);
-            this.grpTime.Location = new System.Drawing.Point(485, 189);
-            this.grpTime.Name = "grpTime";
-            this.grpTime.Size = new System.Drawing.Size(386, 39);
-            this.grpTime.TabIndex = 6;
-            this.grpTime.TabStop = false;
-            // 
-            // rdbArrival
-            // 
-            this.rdbArrival.AutoSize = true;
-            this.rdbArrival.Location = new System.Drawing.Point(136, 12);
-            this.rdbArrival.Name = "rdbArrival";
-            this.rdbArrival.Size = new System.Drawing.Size(68, 21);
-            this.rdbArrival.TabIndex = 7;
-            this.rdbArrival.TabStop = true;
-            this.rdbArrival.Text = "arrival";
-            this.rdbArrival.UseVisualStyleBackColor = true;
-            // 
-            // rdbDepature
-            // 
-            this.rdbDepature.AutoSize = true;
-            this.rdbDepature.Location = new System.Drawing.Point(24, 12);
-            this.rdbDepature.Name = "rdbDepature";
-            this.rdbDepature.Size = new System.Drawing.Size(86, 21);
-            this.rdbDepature.TabIndex = 6;
-            this.rdbDepature.TabStop = true;
-            this.rdbDepature.Text = "depature";
-            this.rdbDepature.UseVisualStyleBackColor = true;
-            // 
             // tbxEmail
             // 
             this.tbxEmail.AccessibleDescription = "email";
@@ -310,6 +275,7 @@
             // 
             // btnEmail
             // 
+            this.btnEmail.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmail.Location = new System.Drawing.Point(763, 610);
@@ -317,7 +283,7 @@
             this.btnEmail.Size = new System.Drawing.Size(108, 35);
             this.btnEmail.TabIndex = 11;
             this.btnEmail.Text = "send Email";
-            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.UseVisualStyleBackColor = false;
             this.btnEmail.Click += new System.EventHandler(this.notInplemented);
             // 
             // dtpTime
@@ -389,7 +355,6 @@
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.tbxEmail);
-            this.Controls.Add(this.grpTime);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.dataGridView);
@@ -409,8 +374,6 @@
             this.grpShow.ResumeLayout(false);
             this.grpShow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.grpTime.ResumeLayout(false);
-            this.grpTime.PerformLayout();
             this.grpHeader.ResumeLayout(false);
             this.grpHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
@@ -435,9 +398,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.GroupBox grpTime;
-        private System.Windows.Forms.RadioButton rdbArrival;
-        private System.Windows.Forms.RadioButton rdbDepature;
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.DateTimePicker dtpTime;
