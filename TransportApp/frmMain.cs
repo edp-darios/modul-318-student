@@ -24,10 +24,9 @@ namespace TransportApp
         private void SearchButton_Click(object sender, EventArgs e)
         {
             try { 
-                if(rdbConnections.Checked) 
+                if (rdbConnections.Checked) 
                 {
                     dataGridView.Rows.Clear();
-          
                     var connections = transport.GetConnections(cboFromLocation.Text, cboToLocation.Text, dtpTime.Value, dtpDate.Value, 16);
 
                     foreach (Connection connection in connections.ConnectionList)
@@ -43,7 +42,7 @@ namespace TransportApp
                     }
                 }
 
-                else
+                else 
                 {
                     dataGridView.Rows.Clear();
                     var StationBoards = transport.GetStationBoard(cboFromLocation.Text,"0",dtpDate.Value,16);
@@ -68,7 +67,7 @@ namespace TransportApp
         private void RadioButtonsShow(object sender, EventArgs e)
         {
             dataGridView.Rows.Clear();
-            if(rdbConnections.Checked)
+            if (rdbConnections.Checked)
             {
                 EnableDisableItems(true);
             } else
@@ -76,8 +75,10 @@ namespace TransportApp
                 EnableDisableItems(false);
                 dtpTime.Value = DateTime.Now;
                 dtpDate.Value = DateTime.Now;
+                cboToLocation.Text = "";
             }
         }
+
         private void EnableDisableItems(bool setEnable)
         {
             lblTo.Enabled = setEnable;
@@ -92,64 +93,18 @@ namespace TransportApp
             dataGridView.Columns[5].Visible = setEnable;
         }
 
-
+        private void cboKeyUp(object sender, KeyEventArgs e)
+        {
+            AutoComplete autoComplete = new AutoComplete();
+            if (e.KeyCode != Keys.Up && e.KeyCode != Keys.Right && e.KeyCode != Keys.Down && e.KeyCode != Keys.Left && e.KeyCode != Keys.Enter)
+            {
+                autoComplete.Station((ComboBox)sender);
+            }
+        }
 
         private void notInplemented(object sender, EventArgs e)
         {
-           MessageBox.Show("Work in progress");
-        }
-
-        public void Station(ComboBox combobox)
-        {
-            if(combobox.Text != "")
-            {
-                try
-                {
-                    combobox.Items.Clear();
-                    combobox.SelectionStart = combobox.Text.Length + 1;
-
-                    List<string> stations = StationSuggestion(combobox.Text);
-
-                    foreach (String station in stations)
-                    {
-                        if (station != null)
-                        {
-                            combobox.Items.Add(station);
-                        }
-                    }
-                    combobox.DroppedDown = true;
-
-                } catch
-                {
-                    combobox.Items.Clear();
-                    combobox.SelectionStart = combobox.Text.Length + 1;
-                    combobox.Items.Add("Kein Resultat");
-                }
-
-
-            }
-
-
-        }
-
-        public List<string> StationSuggestion(string query)
-        {
-            List<string> stationList = new List<string>();
-            var stations = transport.GetStations(query);
-            foreach (Station station in stations.StationList)
-            {
-                stationList.Add(station.Name);
-            }
-            if (stationList.Count == 0)
-            {
-                stationList.Add("Kein Resultat");
-            }
-            return stationList;
-        }
-
-        private void cboFromLocation_KeyUp(object sender, KeyEventArgs e)
-        {
-                Station((ComboBox)sender);     
+            MessageBox.Show("Work in progress");
         }
     }
 }

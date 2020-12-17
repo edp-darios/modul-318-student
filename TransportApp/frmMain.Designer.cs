@@ -135,7 +135,7 @@
             this.cboFromLocation.Name = "cboFromLocation";
             this.cboFromLocation.Size = new System.Drawing.Size(353, 24);
             this.cboFromLocation.TabIndex = 2;
-            this.cboFromLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboFromLocation_KeyUp);
+            this.cboFromLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboKeyUp);
             // 
             // cboToLocation
             // 
@@ -144,6 +144,7 @@
             this.cboToLocation.Name = "cboToLocation";
             this.cboToLocation.Size = new System.Drawing.Size(353, 24);
             this.cboToLocation.TabIndex = 3;
+            this.cboToLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboKeyUp);
             // 
             // btnMapFrom
             // 
