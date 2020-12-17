@@ -82,7 +82,7 @@
             this.lblFrom.Location = new System.Drawing.Point(13, 162);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(44, 17);
-            this.lblFrom.TabIndex = 11;
+            this.lblFrom.TabIndex = 0;
             this.lblFrom.Text = "From:";
             // 
             // lblTo
@@ -91,7 +91,7 @@
             this.lblTo.Location = new System.Drawing.Point(453, 162);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(29, 17);
-            this.lblTo.TabIndex = 11;
+            this.lblTo.TabIndex = 0;
             this.lblTo.Text = "To:";
             // 
             // grpShow
@@ -101,7 +101,7 @@
             this.grpShow.Location = new System.Drawing.Point(61, 109);
             this.grpShow.Name = "grpShow";
             this.grpShow.Size = new System.Drawing.Size(810, 39);
-            this.grpShow.TabIndex = 3;
+            this.grpShow.TabIndex = 0;
             this.grpShow.TabStop = false;
             // 
             // rdbDepatureBoard
@@ -111,6 +111,7 @@
             this.rdbDepatureBoard.Name = "rdbDepatureBoard";
             this.rdbDepatureBoard.Size = new System.Drawing.Size(127, 21);
             this.rdbDepatureBoard.TabIndex = 1;
+            this.rdbDepatureBoard.TabStop = true;
             this.rdbDepatureBoard.Text = "depature board";
             this.rdbDepatureBoard.UseVisualStyleBackColor = true;
             this.rdbDepatureBoard.Click += new System.EventHandler(this.RadioButtonsShow);
@@ -156,7 +157,7 @@
             this.btnMapFrom.Location = new System.Drawing.Point(420, 159);
             this.btnMapFrom.Name = "btnMapFrom";
             this.btnMapFrom.Size = new System.Drawing.Size(27, 24);
-            this.btnMapFrom.TabIndex = 11;
+            this.btnMapFrom.TabIndex = 0;
             this.btnMapFrom.TabStop = false;
             this.btnMapFrom.UseVisualStyleBackColor = false;
             this.btnMapFrom.Click += new System.EventHandler(this.notInplemented);
@@ -171,7 +172,7 @@
             this.btnMapTo.Location = new System.Drawing.Point(844, 159);
             this.btnMapTo.Name = "btnMapTo";
             this.btnMapTo.Size = new System.Drawing.Size(27, 24);
-            this.btnMapTo.TabIndex = 11;
+            this.btnMapTo.TabIndex = 0;
             this.btnMapTo.TabStop = false;
             this.btnMapTo.UseVisualStyleBackColor = false;
             this.btnMapTo.Click += new System.EventHandler(this.notInplemented);
@@ -203,8 +204,7 @@
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(855, 304);
-            this.dataGridView.TabIndex = 11;
-            this.dataGridView.TabStop = false;
+            this.dataGridView.TabIndex = 9;
             // 
             // Depature
             // 
@@ -254,7 +254,7 @@
             this.lblTime.Location = new System.Drawing.Point(13, 205);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(43, 17);
-            this.lblTime.TabIndex = 12;
+            this.lblTime.TabIndex = 0;
             this.lblTime.Text = "Time:";
             // 
             // dtpDate
@@ -274,9 +274,8 @@
             this.grpTime.Location = new System.Drawing.Point(485, 189);
             this.grpTime.Name = "grpTime";
             this.grpTime.Size = new System.Drawing.Size(386, 39);
-            this.grpTime.TabIndex = 4;
+            this.grpTime.TabIndex = 6;
             this.grpTime.TabStop = false;
-            this.grpTime.Visible = false;
             // 
             // rdbArrival
             // 
@@ -306,7 +305,7 @@
             this.tbxEmail.Location = new System.Drawing.Point(16, 616);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(741, 22);
-            this.tbxEmail.TabIndex = 9;
+            this.tbxEmail.TabIndex = 10;
             this.tbxEmail.Text = "example@email.com";
             // 
             // btnEmail
