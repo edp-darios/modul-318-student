@@ -43,14 +43,17 @@ namespace TransportApp
                 }
             } 
         }
-
+        
         public List<string> StationSuggestion(string query)
         {
             List<string> stationList = new List<string>();
             var stations = transport.GetStations(query);
             foreach (Station station in stations.StationList)
             {
-                stationList.Add(station.Name);
+                if (!string.IsNullOrEmpty(station.Name) && !string.IsNullOrEmpty(station.Id)) 
+                { 
+                    stationList.Add(station.Name);
+                }
             }
             if (stationList.Count == 0)
             {
