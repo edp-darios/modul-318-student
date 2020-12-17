@@ -13,7 +13,7 @@ namespace TransportApp
 
         public void Station(ComboBox combobox)
         {
-            if (combobox.Text != "")
+            if (combobox.Text != "" && combobox.Text.Length >= 3)
             {
                 try
                 {
@@ -41,11 +41,7 @@ namespace TransportApp
                     combobox.SelectionStart = combobox.Text.Length + 1;
                     combobox.Items.Add("Kein Resultat");
                 }
-
-
-            }
-
-
+            } 
         }
 
         public List<string> StationSuggestion(string query)

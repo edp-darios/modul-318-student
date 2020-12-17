@@ -15,6 +15,7 @@ namespace TransportApp
     public partial class frmMain : Form
     {
         ITransport transport = new Transport();
+        AutoComplete autoComplete = new AutoComplete();
 
         public frmMain()
         {
@@ -61,7 +62,6 @@ namespace TransportApp
             {
                 MessageBox.Show("Die Eingegebene Station ist nicht verfügbar!");
             }
-
         }
 
         private void RadioButtonsShow(object sender, EventArgs e)
@@ -95,7 +95,6 @@ namespace TransportApp
 
         private void cboKeyUp(object sender, KeyEventArgs e)
         {
-            AutoComplete autoComplete = new AutoComplete();
             if (e.KeyCode != Keys.Up && e.KeyCode != Keys.Right && e.KeyCode != Keys.Down && e.KeyCode != Keys.Left && e.KeyCode != Keys.Enter)
             {
                 autoComplete.Station((ComboBox)sender);
