@@ -37,8 +37,6 @@
             this.rdbConnections = new System.Windows.Forms.RadioButton();
             this.cboFromLocation = new System.Windows.Forms.ComboBox();
             this.cboToLocation = new System.Windows.Forms.ComboBox();
-            this.btnMapFrom = new System.Windows.Forms.Button();
-            this.btnMapTo = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Depature = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,7 +128,7 @@
             this.cboFromLocation.FormattingEnabled = true;
             this.cboFromLocation.Location = new System.Drawing.Point(61, 159);
             this.cboFromLocation.Name = "cboFromLocation";
-            this.cboFromLocation.Size = new System.Drawing.Size(353, 24);
+            this.cboFromLocation.Size = new System.Drawing.Size(386, 24);
             this.cboFromLocation.TabIndex = 2;
             this.cboFromLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboKeyUp);
             // 
@@ -139,39 +137,9 @@
             this.cboToLocation.FormattingEnabled = true;
             this.cboToLocation.Location = new System.Drawing.Point(485, 159);
             this.cboToLocation.Name = "cboToLocation";
-            this.cboToLocation.Size = new System.Drawing.Size(353, 24);
+            this.cboToLocation.Size = new System.Drawing.Size(386, 24);
             this.cboToLocation.TabIndex = 3;
             this.cboToLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboKeyUp);
-            // 
-            // btnMapFrom
-            // 
-            this.btnMapFrom.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnMapFrom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMapFrom.BackgroundImage")));
-            this.btnMapFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMapFrom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMapFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapFrom.Location = new System.Drawing.Point(420, 159);
-            this.btnMapFrom.Name = "btnMapFrom";
-            this.btnMapFrom.Size = new System.Drawing.Size(27, 24);
-            this.btnMapFrom.TabIndex = 0;
-            this.btnMapFrom.TabStop = false;
-            this.btnMapFrom.UseVisualStyleBackColor = false;
-            this.btnMapFrom.Click += new System.EventHandler(this.notInplemented);
-            // 
-            // btnMapTo
-            // 
-            this.btnMapTo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnMapTo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMapTo.BackgroundImage")));
-            this.btnMapTo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMapTo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMapTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapTo.Location = new System.Drawing.Point(844, 159);
-            this.btnMapTo.Name = "btnMapTo";
-            this.btnMapTo.Size = new System.Drawing.Size(27, 24);
-            this.btnMapTo.TabIndex = 0;
-            this.btnMapTo.TabStop = false;
-            this.btnMapTo.UseVisualStyleBackColor = false;
-            this.btnMapTo.Click += new System.EventHandler(this.notInplemented);
             // 
             // SearchButton
             // 
@@ -359,8 +327,6 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.btnMapTo);
-            this.Controls.Add(this.btnMapFrom);
             this.Controls.Add(this.cboToLocation);
             this.Controls.Add(this.cboFromLocation);
             this.Controls.Add(this.grpShow);
@@ -392,8 +358,6 @@
         private System.Windows.Forms.RadioButton rdbConnections;
         private System.Windows.Forms.ComboBox cboFromLocation;
         private System.Windows.Forms.ComboBox cboToLocation;
-        private System.Windows.Forms.Button btnMapFrom;
-        private System.Windows.Forms.Button btnMapTo;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label lblTime;
