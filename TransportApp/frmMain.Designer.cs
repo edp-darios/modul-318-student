@@ -114,7 +114,7 @@
             // 
             this.rdbConnections.AutoSize = true;
             this.rdbConnections.Checked = true;
-            this.rdbConnections.Location = new System.Drawing.Point(6, 12);
+            this.rdbConnections.Location = new System.Drawing.Point(8, 12);
             this.rdbConnections.Name = "rdbConnections";
             this.rdbConnections.Size = new System.Drawing.Size(105, 21);
             this.rdbConnections.TabIndex = 0;

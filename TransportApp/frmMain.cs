@@ -84,7 +84,6 @@ namespace TransportApp
         {
             lblTo.Enabled = setEnable;
             cboToLocation.Enabled = setEnable;
-            btnMapTo.Enabled = setEnable;
             dtpDate.Enabled = setEnable;
             dtpTime.Enabled = setEnable;
             lblTime.Enabled = setEnable;
