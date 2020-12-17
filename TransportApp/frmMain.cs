@@ -87,7 +87,6 @@ namespace TransportApp
             dtpDate.Enabled = setEnable;
             dtpTime.Enabled = setEnable;
             lblTime.Enabled = setEnable;
-            grpTime.Enabled = setEnable;
             dataGridView.Columns[3].Visible = setEnable;
             dataGridView.Columns[4].Visible = setEnable;
             dataGridView.Columns[5].Visible = setEnable;
